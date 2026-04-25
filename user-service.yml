@@ -1,0 +1,8 @@
+server:
+  port: 8076
+spring:
+  datasource:
+    url: jdbc:mysql://mysql-db:3306/userDb?createDatabaseIfNotExist=true
+  redis:
+    host: my-local-redis
+    port: 6379

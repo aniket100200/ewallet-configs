@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: user-service-route
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/user/**
+            
+        - id: wallet-service-route
+          uri: lb://WALLET-SERVICE
+          predicates:
+            - Path=/wallet/**
+            
+        - id: notification-service-route
+          uri: lb://NOTIFICATION-SERVICE
+          predicates:
+            - Path=/notification/**
+            
+        - id: transaction-service-route
+          uri: lb://TRANSACTION-SERVICE
+          predicates:
+            - Path=/transaction/**, /aniket/**
