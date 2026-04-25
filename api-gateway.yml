@@ -33,4 +33,4 @@ spring:
         - id: transaction-service-route
           uri: lb://TRANSACTION-SERVICE
           predicates:
-            - Path=/transaction/**, /aniket/**
+            - Path=/transaction/**,/aniket/**
