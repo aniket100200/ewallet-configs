@@ -3,3 +3,14 @@ server:
 spring:
   datasource:
     url: jdbc:mysql://mysql-db:3306/emailDb?createDatabaseIfNotExist=true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${EMAIL_USERNAME:khangaraniket365@gmail.com}
+    password: ${EMAIL_PASSWORD:xeeqhnamuvoycdvl}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
